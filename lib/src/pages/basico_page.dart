@@ -59,16 +59,16 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 50.0),
         child: Row(
           children: <Widget>[
-            _accion(Icons.phone, "CALL",context),
+            _accion(Icons.phone, "CALL",context,"scroll"),
             SizedBox(width: 50.0),
-            _accion(Icons.navigation, "ROUTE",context),
+            _accion(Icons.navigation, "ROUTE",context,"gradiente"),
             SizedBox(width: 50.0),
-            _accion(Icons.share, "SHARE",context),
+            _accion(Icons.share, "SHARE",context,"gradiente"),
           ],
         ));
   }
 
-  Widget _accion(IconData icon, String label,BuildContext context) {
+  Widget _accion(IconData icon, String label,BuildContext context,String route) {
     return Column(
       children: <Widget>[
         IconButton(
@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
           color: Colors.blue,
           iconSize: 30.0,
           onPressed: () {
-            Navigator.pushNamed(context, "scroll");
+            Navigator.pushNamed(context, route);
           },
         ),
         Text(label)
